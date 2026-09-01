@@ -1,1 +1,9 @@
 node_modules/
+#Containerfile
+#.git
+#*ignore
+*.swp
+#index.js
+#index.test.js
+#README.md
+

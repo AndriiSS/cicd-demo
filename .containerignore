@@ -1,0 +1,7 @@
+Containerfile
+*.swp
+.git
+.*ignore
+#index.js
+#index.test.js
+README.md
