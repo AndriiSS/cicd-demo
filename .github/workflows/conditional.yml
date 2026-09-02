@@ -9,8 +9,8 @@ jobs:
     - name: Always runs
       run: echo "This always runs"
     
-    - name: Only on main branch
-      if: github.ref == 'refs/heads/main'
+    - name: Only on master branch
+      if: github.ref == 'refs/heads/master'
       run: echo "Deploying to production"
     
     - name: Only on tags
@@ -20,3 +20,4 @@ jobs:
     - name: Only on PR
       if: github.event_name == 'pull_request'
       run: echo "Running PR checks"
+
