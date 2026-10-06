@@ -21,7 +21,6 @@ jobs:
       uses: actions/checkout@v7
 
     - name: List files in workspace
-      needs: 'Checkout the repo'
       run: |
         echo "Current directory:"
         pwd
@@ -38,8 +37,17 @@ jobs:
       run: npm install
 
     - name: Run tests
-      needs: 'List files in workspace'
       run: | 
         echo "Testing commit $GITHUB_SHA"
         npm test
+
+  test-on-latest:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v7
+      - run: |
+          echo "Testing on the latest ubuntu"
+          echo "Dir contents:"
+          pwd
+          ls -la
 
