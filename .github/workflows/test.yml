@@ -17,6 +17,12 @@ jobs:
         node-version: ['20', '22', '24']
 
     steps:
+    - name: List files in workspace
+      run: |
+        echo "Current directory:"
+        pwd
+        echo "Directory contents:"
+        ls -la
 #    - uses: actions/checkout@v7
     
     - name: Setup Node.js ${{ matrix.node-version }}
@@ -28,9 +34,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Show message    
-      run: echo "Testing commit $GITHUB_SHA"
-
     - name: Run tests
-      run: npm test
+      run: | 
+        echo "Testing commit $GITHUB_SHA"
+        npm test
 
